@@ -13,30 +13,4 @@ app.controller('taskController', function($scope, $http){
 		});
 	};
 
-	// FUNCTION: addTask
-	function addTask(task){
-		$http.psot("ajax/addTask.php?task="+task).success(function(data){
-			getTasks();			// Refresh Task List
-			clearTaskInput();
-		});
-	};
-
-	// FUNCTION: deleteTask
-	function deleteTask(taskID){
-		$http.post("ajax/deleteTask.php?taskID="+taskID).success(function(data){
-			getTasks();			// Refresh Task List
-		});
-	};
-
-	// FUNCTION: toggleStatus
-	function toggleStatus(taskID, status){
-		if (status == '2'){
-			status = '0';
-		}else{
-			status = '2';
-		}
-		$http.post("ajax/updateTask.php?taskID="+taskID+"&status="+status).success(function(data){
-			getTasks();			// Refresh Task List
-		});
-	};
 });
