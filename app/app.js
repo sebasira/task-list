@@ -17,7 +17,7 @@ app.controller('tasksController', function($scope, $http){
 
   // FUNCTION: addTask
   function addTask(task){
-    $http.psot("ajax/addTask.php?task="+task).success(function(data){
+    $http.post("ajax/addTask.php?task="+task).success(function(data){
       getTasks();     // Refresh Task List
       clearTaskInput();
     });
