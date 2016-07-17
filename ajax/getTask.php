@@ -1,7 +1,7 @@
 <?php
 	requiere_once'../include/db.php';
 
-	$query="select ID, TASK, STATUS from tasks order by status,id desc";
+	$query="select ID, TASK, STATUS from task order by status,id desc";
 
 	$result = $mysqli->query($query) or die($mysqli->error.__LINE__);
 
