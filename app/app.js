@@ -3,16 +3,6 @@ var app = angular.module('taskList',[]);
 
 // TASK CONTROLLER
 //----------------
-app.controller('AtasksController', function($scope, $http) {
-  getTask(); // Load all available tasks 
-  function getTask(){  
-  $http.post("ajax/getTasks.php").success(function(data){
-        $scope.tasks = data;
-       });
-  };
-  
-});
-
 app.controller('tasksController', function($scope, $http){
   getTasks();   // Load available tasks
 
