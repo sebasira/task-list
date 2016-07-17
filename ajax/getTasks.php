@@ -2,7 +2,7 @@
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1); 
 	
-	requiere_once'../include/db.php';
+	require_once'../include/db.php';
 
 	$query="select ID, TASK, STATUS from task order by status,id desc";
 

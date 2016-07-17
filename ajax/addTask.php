@@ -1,6 +1,6 @@
 <?php
 	// Include MySQL connection script
-	requiere_once '../includes/db.php'
+	require_once '../includes/db.php';
 
 	if (isset($_GET['task'])){
 		$task = $_GET['task'];
