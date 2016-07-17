@@ -41,4 +41,9 @@ app.controller('tasksController', function($scope, $http){
       getTasks();     // Refresh Task List
     });
   };
+
+  // FUNCTION: clera input
+  function clearTaskInput(){
+    $scope.taskInput = "";
+  };
 });
