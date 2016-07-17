@@ -1,9 +1,9 @@
 <?php
 	error_reporting(E_ALL);
 	ini_set('display_errors', 1); 
-	
+
 	// Include MySQL connection script
-	require_once '../includes/db.php';
+	require_once '../include/db.php';
 
 	if (isset($_GET['task'])){
 		$task = $_GET['task'];
