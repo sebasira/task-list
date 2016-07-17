@@ -6,6 +6,8 @@ var app = angular.module('taskList',[]);
 app.controller('tasksController', function($scope, $http){
   getTasks();   // Load available tasks
 
+  $scope.addTask(newT) = addTask(newT);
+
   // FUNCTION: getTasks
   function getTasks(){
     $http.post("ajax/getTasks.php").success(function(data){
