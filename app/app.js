@@ -25,9 +25,11 @@ app.controller('tasksController', function($scope, $http){
 
   // FUNCTION: deleteTask
   function deleteTask(taskID){
-    $http.post("ajax/deleteTask.php?taskID="+taskID).success(function(data){
-      getTasks();     // Refresh Task List
-    });
+    if (confirm('Are you sure you want to delete this task?')){
+      $http.post("ajax/deleteTask.php?taskID="+taskID).success(function(data){
+        getTasks();     // Refresh Task List
+      });
+    }
   };
 
   // FUNCTION: toggleStatus
