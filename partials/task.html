@@ -1,6 +1,8 @@
 <div class="widget-box" id="recent-box" ng-controller="tasksController">
 	<div class="widget-header header-color-blue">
+		<!-- HEADER -->
 		<div class="row">
+			<!-- Header Title -->
 			<div class="col-sm-6">
 				<h4 class="bigger lighter">
 					<i class="glyphicon glyphicon-align-justify"></i>&nbsp;
@@ -8,17 +10,30 @@
 				</h4>
 			</div>
 			
+			<!-- New Task Button 
+			When clicked it toggles value of addNewClicked, then we use that status to
+			show/hide the add new task input-box below
+			-->
 			<div class="col-sm-3">
 				<button ng-click="addNewClicked=!addNewClicked;" class="btn btn-sm btn-danger header-elements-margin"><i class="glyphicon  glyphicon-plus"></i>&nbsp;Add New Task</button>
 			</div>
 	
+			<!-- Filter Task
+			Check below, where it displays the task list using ng-repeat it sets this
+			filter, so it dinamically filter task list 
+			-->
 			<div class="col-sm-3">
 				<input type="text" ng-model="filterTask" class="form-control search header-elements-margin" placeholder="Filter Tasks">
 			</div>
 		</div>
 	</div>
 	
+	<!-- TASK LIST -->
 	<div class="widget-body ">
+		<!-- Add New Task
+		Check that the form to add a new task is hidden at its visibility depends
+		on addNewClicked wich is toggled above.
+		-->
 		<form ng-init="addNewClicked=false; " ng-if="addNewClicked" id="newTaskForm" class="add-task">
 			<div class="form-actions">
 				<div class="input-group">
@@ -31,6 +46,9 @@
 			</div>
 		</form>
 	
+		<!-- Task List
+		Here we use ng-repeat to display the task list, with the filter set above.
+		-->
 		<div class="task">
 			<label class="checkbox" ng-repeat="task in tasks | filter : filterTask">
 	    	<input 
