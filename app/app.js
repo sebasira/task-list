@@ -6,7 +6,10 @@ var app = angular.module('taskList',[]);
 app.controller('tasksController', function($scope, $http){
   getTasks();   // Load available tasks
 
+  // Give SCOPE to the functions
   $scope.addTask = addTask;
+  $scope.deleteTask = deleteTask;
+
 
   // FUNCTION: getTasks
   function getTasks(){
