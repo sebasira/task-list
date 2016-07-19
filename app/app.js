@@ -9,6 +9,7 @@ app.controller('tasksController', function($scope, $http){
   // Give SCOPE to the functions
   $scope.addTask = addTask;
   $scope.deleteTask = deleteTask;
+  $scope.toggleStatus = toggleStatus;
 
 
   // FUNCTION: getTasks
